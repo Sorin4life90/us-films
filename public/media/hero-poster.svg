@@ -1,0 +1,17 @@
+<svg width="1600" height="960" viewBox="0 0 1600 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="960" fill="#121214"/>
+  <rect x="72" y="72" width="1456" height="816" rx="28" fill="#17171B" stroke="#2A2520"/>
+  <rect x="120" y="140" width="520" height="8" rx="4" fill="#B88C62" fill-opacity="0.9"/>
+  <rect x="120" y="196" width="760" height="132" rx="16" fill="#1C1C21"/>
+  <rect x="120" y="356" width="560" height="28" rx="14" fill="#2A2A31"/>
+  <rect x="120" y="402" width="472" height="28" rx="14" fill="#24242A"/>
+  <rect x="120" y="512" width="216" height="52" rx="26" fill="#B88C62"/>
+  <rect x="360" y="512" width="216" height="52" rx="26" stroke="#44414A"/>
+  <rect x="920" y="188" width="488" height="548" rx="20" fill="#101014" stroke="#2B2A33"/>
+  <path d="M1088 348L1248 440L1088 532V348Z" fill="#F3E9DE" fill-opacity="0.92"/>
+  <rect x="980" y="782" width="380" height="12" rx="6" fill="#2A2A31"/>
+  <rect x="980" y="816" width="250" height="12" rx="6" fill="#24242A"/>
+  <text x="120" y="640" fill="#F3E9DE" font-family="Cormorant Garamond, serif" font-size="72" font-weight="600">Drop hero-showreel.mp4 in /public/media</text>
+  <text x="120" y="714" fill="#C7B6A5" font-family="Manrope, sans-serif" font-size="28">Poster fallback pentru desktop si mobil pana cand adaugi video-ul final.</text>
+</svg>
+

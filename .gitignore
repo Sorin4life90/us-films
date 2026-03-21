@@ -1,0 +1,17 @@
+node_modules
+dist
+.DS_Store
+*.local
+.env
+.env.*
+!.env.example
+*.tsbuildinfo
+vite-dev*.log
+_candidate_photos/
+_candidate_photos2/
+beat-bunny.html
+director*.html
+nicole_*.html
+nicole_*.json
+vite.config.js
+vite.config.d.ts
