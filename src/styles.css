@@ -1406,6 +1406,39 @@ textarea.field__control {
     width: min(100% - 28px, 1200px);
   }
 
+  .site-nav__inner {
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .site-nav__brand {
+    gap: 1px;
+  }
+
+  .site-nav__brand-mark {
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+  }
+
+  .site-nav__brand-name {
+    font-size: 1.45rem;
+  }
+
+  .site-nav__links {
+    gap: 4px;
+  }
+
+  .site-nav__link {
+    padding: 7px 10px;
+    font-size: 0.82rem;
+  }
+
+  .site-nav__link::after {
+    left: 10px;
+    right: 10px;
+    bottom: 4px;
+  }
+
   .section {
     width: min(100% - 28px, 1200px);
   }
