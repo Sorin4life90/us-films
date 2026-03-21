@@ -1012,6 +1012,8 @@
 
 .section--photography {
   padding-top: 56px;
+  position: relative;
+  z-index: 1;
 }
 
 .photography-section {
@@ -1022,6 +1024,8 @@
 .photography-section__content {
   display: grid;
   gap: 20px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .photography-section__links {
@@ -1417,7 +1421,7 @@ textarea.field__control {
   }
 
   .showreel__mobile-poster {
-    display: block;
+    display: none;
   }
 
   .section--films {
@@ -1490,10 +1494,25 @@ textarea.field__control {
 
   .photography-section__content {
     gap: 14px;
+    padding-top: 18px;
   }
 
   .photography-section__sources {
     gap: 36px;
+  }
+
+  .section--photography .section-heading__title {
+    font-size: clamp(2.2rem, 11vw, 3.2rem);
+  }
+
+  .photography-source {
+    gap: 18px;
+    padding-top: 4px;
+  }
+
+  .about-gallery__actions {
+    position: relative;
+    z-index: 1;
   }
 
   .floating-chat {

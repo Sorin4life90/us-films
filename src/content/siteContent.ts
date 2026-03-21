@@ -31,7 +31,7 @@ export const siteContent: SiteContent = {
     description:
       "Wedding videography ramane centrul paginii. Restul sectiunilor trebuie sa o sustina discret: selectie, semnatura autorului, validare sociala si contact.",
     embedTitle: "US Films featured wedding film",
-    embedSrc: "https://www.youtube.com/embed/FNToMcI6o5s?si=D53JChr0zsjdBKjc",
+    embedSrc: "https://vimeo.com/1107117532?share=copy&fl=sv&fe=ci",
   },
   selectedFilms: {
     eyebrow: "Wedding Films",
