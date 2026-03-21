@@ -533,7 +533,7 @@
   inset: 0;
   background:
     linear-gradient(180deg, rgba(6, 7, 11, 0.16) 0%, rgba(6, 7, 11, 0.56) 100%),
-    url("/media/fotolense/mihaela-razvan.jpg") center 32% / cover no-repeat;
+    url("/media/fotolense/adda-giani.jpg") center 34% / cover no-repeat;
 }
 
 .showreel__background-iframe {
@@ -1421,7 +1421,7 @@ textarea.field__control {
   }
 
   .showreel__mobile-poster {
-    display: none;
+    display: block;
   }
 
   .section--films {
@@ -1466,9 +1466,7 @@ textarea.field__control {
   }
 
   .showreel__background-iframe {
-    display: block;
-    transform: scale(2.2);
-    transform-origin: center center;
+    display: none;
   }
 
   .showreel__floating-ui {
