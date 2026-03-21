@@ -1462,6 +1462,7 @@ textarea.field__control {
 
   .site-nav__link--mobile-only {
     display: inline-flex;
+    margin-inline: auto;
   }
 
   .site-nav__cta {
