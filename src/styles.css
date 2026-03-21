@@ -1250,6 +1250,21 @@
     transform 160ms ease;
 }
 
+select.field__control {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)),
+    rgba(255, 255, 255, 0.05);
+  color: #fff1df;
+}
+
+select.field__control option {
+  background: #14161c;
+  color: #fff1df;
+}
+
 .field__control:hover {
   transform: translateY(-1px);
 }

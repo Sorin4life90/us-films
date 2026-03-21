@@ -182,6 +182,11 @@ export const siteContent: SiteContent = {
     projectTypes: [
       "Nunta",
       "Cununie civilă",
+      "Botez",
+      "Save the Date",
+      "Trash the Dress",
+      "Majorat",
+      "Petrecere privată / altele",
       "Ședință de cuplu",
       "Eveniment privat",
       "Alt eveniment",
