@@ -41,6 +41,7 @@ export function ShowreelEmbed() {
     <section className="section section--showreel" id="home" aria-label="Wedding videography hero">
       <div className="showreel showreel--hero-video">
         <div className="showreel__background">
+          <div className="showreel__mobile-poster" aria-hidden="true" />
           <iframe
             className="showreel__background-iframe"
             src={embedSrc}
