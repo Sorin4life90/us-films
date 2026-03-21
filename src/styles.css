@@ -603,11 +603,18 @@
   transform: translateY(-1px);
 }
 
-.floating-chat {
+.floating-chat-wrap {
   position: fixed;
   right: 22px;
   bottom: 22px;
   z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.floating-chat,
+.floating-audio-toggle {
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -622,7 +629,6 @@
     0 18px 40px rgba(0, 0, 0, 0.32),
     inset 0 1px 0 rgba(255, 255, 255, 0.08);
   color: #fff2e3;
-  text-decoration: none;
   backdrop-filter: blur(14px);
   transition:
     transform 180ms ease,
@@ -630,13 +636,27 @@
     border-color 180ms ease;
 }
 
+.floating-chat {
+  text-decoration: none;
+}
+
+.floating-audio-toggle {
+  cursor: pointer;
+}
+
 .floating-chat:hover,
-.floating-chat:focus-visible {
+.floating-chat:focus-visible,
+.floating-audio-toggle:hover,
+.floating-audio-toggle:focus-visible {
   transform: translateY(-2px);
   border-color: rgba(255, 194, 133, 0.34);
   box-shadow:
     0 22px 48px rgba(0, 0, 0, 0.36),
     inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.floating-audio-toggle:focus-visible {
+  outline: none;
 }
 
 .floating-chat__icon {
@@ -1581,10 +1601,17 @@ textarea.field__control {
   }
 
   .floating-chat {
-    right: 16px;
-    bottom: 16px;
     min-height: 44px;
     padding: 0 12px;
+  }
+
+  .floating-chat-wrap {
+    right: 16px;
+    bottom: 16px;
+  }
+
+  .floating-audio-toggle {
+    display: none;
   }
 
   .floating-chat__toast {
