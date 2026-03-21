@@ -1462,7 +1462,9 @@ textarea.field__control {
   }
 
   .showreel__background-iframe {
-    display: none;
+    display: block;
+    transform: scale(2.2);
+    transform-origin: center center;
   }
 
   .showreel__floating-ui {
