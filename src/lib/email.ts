@@ -13,9 +13,9 @@ function buildMailtoUrl(data: ContactFormData, recipientEmail: string) {
     `Email: ${data.email}`,
     `Prenume: ${data.company}`,
     `Tip de poveste: ${data.projectType}`,
-    `Cand are loc: ${data.timeline}`,
+    `Când are loc: ${data.timeline}`,
     "",
-    "Cateva randuri despre voi:",
+    "Câteva rânduri despre voi:",
     data.message,
     "",
     `Trimis la: ${new Date().toLocaleString("ro-RO")}`,
@@ -55,7 +55,7 @@ export async function sendContactForm(
 
   if (!response.ok) {
     throw new Error(
-      "Cererea nu a putut fi trimisa. Verifica configurarea serviciului sau incearca din nou.",
+      "Cererea nu a putut fi trimisă. Verifică configurarea serviciului sau încearcă din nou.",
     );
   }
 

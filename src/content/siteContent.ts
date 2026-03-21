@@ -27,10 +27,10 @@ export const siteContent: SiteContent = {
   },
   featuredFilm: {
     eyebrow: "",
-    title: "Piesa principala",
-    titleAccent: "a experientei",
+    title: "Piesa principală",
+    titleAccent: "a experienței",
     description:
-      "Wedding videography ramane centrul paginii. Restul sectiunilor trebuie sa o sustina discret: selectie, semnatura autorului, validare sociala si contact.",
+      "Wedding videography rămâne centrul paginii. Restul secțiunilor trebuie să o susțină discret: selecție, semnătura autorului, validare socială și contact.",
     embedTitle: "US Films featured wedding film",
     embedSrc: "https://www.youtube.com/embed/FNToMcI6o5s?si=D53JChr0zsjdBKjc",
   },
@@ -39,7 +39,7 @@ export const siteContent: SiteContent = {
     title: "Wedding Films",
     titleAccent: "",
     description:
-      "Cateva filme care definesc stilul US Films: natural, elegant si personal.",
+      "Câteva filme care definesc stilul US Films: natural, elegant și personal.",
   },
   aboutSignature: {
     eyebrow: "Despre",
@@ -57,7 +57,7 @@ export const siteContent: SiteContent = {
     title: "Wedding Photography",
     titleAccent: "",
     body:
-      "Fotografi Colaboratori",
+      "Fotografi colaboratori",
     sources: [
       {
         site: {
@@ -103,25 +103,25 @@ export const siteContent: SiteContent = {
         gallery: [
           {
             src: "/media/fotolense/adda-giani.jpg",
-            alt: "Adda si Giani",
+            alt: "Adda și Giani",
             label: "Adda & Giani",
             href: "https://fotolense.ro/_ziua-cea-mare/adda-amp-giani",
           },
           {
             src: "/media/fotolense/ariana-paul.jpg",
-            alt: "Ariana si Paul",
+            alt: "Ariana și Paul",
             label: "Ariana & Paul",
             href: "https://fotolense.ro/_ziua-cea-mare/ariana-amp-paul",
           },
           {
             src: "/media/fotolense/gabriela-vlad.jpg",
-            alt: "Gabriela si Vlad",
+            alt: "Gabriela și Vlad",
             label: "Gabriela & Vlad",
             href: "https://fotolense.ro/_ziua-cea-mare/georgiana-amp-vlad",
           },
           {
             src: "/media/fotolense/mihaela-razvan.jpg",
-            alt: "Mihaela si Razvan",
+            alt: "Mihaela și Răzvan",
             label: "Mihaela & Razvan",
             href: "https://fotolense.ro/_ziua-cea-mare/mihaela-amp-razvan",
           },
@@ -163,34 +163,34 @@ export const siteContent: SiteContent = {
   },
   testimonials: {
     eyebrow: "Words",
-    title: "Incredere spusa",
-    titleAccent: "simplu si clar",
+    title: "Încredere spusă",
+    titleAccent: "simplu și clar",
     description:
-      "Marturiile trebuie sa functioneze ca dovada de ton si experienta, nu doar ca text de umplutura. Pentru moment raman placeholder, dar structura este finala.",
+      "Mărturiile trebuie să funcționeze ca dovadă de ton și experiență, nu doar ca text de umplutură. Pentru moment rămân placeholder, dar structura este finală.",
   },
   contact: {
     eyebrow: "Contact",
     title: "Contact",
-    body: "Pentru disponibilitate, detalii si oferta, ma poti contacta folosind formularul sau datele de mai jos.",
+    body: "Pentru disponibilitate, detalii și ofertă, mă poți contacta folosind formularul sau datele de mai jos.",
     email: "uta.sorin1@gmail.com",
     recipientEmail: "uta.sorin1@gmail.com",
     phone: "0773805239",
     instagram: "https://www.instagram.com/us_films_wedding_videography/",
-    location: "Romania / destinatii disponibile la cerere",
+    location: "România / destinații disponibile la cerere",
     notice:
-      "Ne rezervam dreptul de a selecta si utiliza imagini foto si video realizate in cadrul evenimentelor, in scopuri de promovare si marketing, cu respectarea unei selectii atent curate, aliniate cu identitatea si standardele noastre estetice.",
+      "Ne rezervăm dreptul de a selecta și utiliza imagini foto și video realizate în cadrul evenimentelor, în scopuri de promovare și marketing, cu respectarea unei selecții atent curate, aliniate cu identitatea și standardele noastre estetice.",
     projectTypes: [
       "Nunta",
-      "Cununie civila",
-      "Sedinta de cuplu",
+      "Cununie civilă",
+      "Ședință de cuplu",
       "Eveniment privat",
       "Alt eveniment",
     ],
     timelines: [
-      "Data este stabilita",
-      "In urmatoarele 2-3 luni",
+      "Data este stabilită",
+      "În următoarele 2-3 luni",
       "Anul viitor",
-      "Doar cer informatii",
+      "Doar cer informații",
     ],
     successMessage:
       "Mesajul a fost trimis cu succes.",
@@ -207,7 +207,7 @@ export const portfolioItems: PortfolioItem[] = [
     mediaType: "video",
     embedSrc: "https://vimeo.com/1107534018?share=copy&fl=sv&fe=ci",
     summary:
-      "Primul wedding film din selectie, redat ca player complet direct in pagina.",
+      "Primul wedding film din selecție, redat ca player complet direct în pagină.",
     tags: ["Vimeo", "Preview", "Wedding"],
   },
   {
@@ -219,7 +219,7 @@ export const portfolioItems: PortfolioItem[] = [
     mediaType: "video",
     embedSrc: "https://www.youtube.com/embed/FNToMcI6o5s?si=EtTPwXp1oUjmN6SE",
     summary:
-      "Al doilea wedding film din selectie, cu sunet, controale si fullscreen.",
+      "Al doilea wedding film din selecție, cu sunet, controale și fullscreen.",
     tags: ["YouTube", "Sound", "Fullscreen"],
   },
   {
@@ -231,7 +231,7 @@ export const portfolioItems: PortfolioItem[] = [
     mediaType: "video",
     embedSrc: "https://www.youtube.com/embed/t7tW2RSXUbs?si=YRni_Rl7MgAvb4pe",
     summary:
-      "Al treilea wedding film din selectie, pastrand acelasi comportament de player interactiv.",
+      "Al treilea wedding film din selecție, păstrând același comportament de player interactiv.",
     tags: ["YouTube", "Interactive", "Wedding"],
   },
   {
@@ -243,7 +243,7 @@ export const portfolioItems: PortfolioItem[] = [
     mediaType: "video",
     embedSrc: "https://vimeo.com/1107117532?share=copy&fl=sv&fe=ci",
     summary:
-      "Al patrulea wedding film din selectie, pastrand acelasi player interactiv direct in pagina.",
+      "Al patrulea wedding film din selecție, păstrând același player interactiv direct în pagină.",
     tags: ["Vimeo", "Interactive", "Wedding"],
   },
   {
@@ -255,7 +255,7 @@ export const portfolioItems: PortfolioItem[] = [
     mediaType: "video",
     embedSrc: "https://www.youtube.com/embed/CowDLhafNFs?si=d6jF5BrH3QAE0yhX",
     summary:
-      "Al cincilea wedding film din selectie, disponibil direct in playerul interactiv din pagina.",
+      "Al cincilea wedding film din selecție, disponibil direct în playerul interactiv din pagină.",
     tags: ["YouTube", "Sound", "Fullscreen"],
   },
   {
@@ -266,7 +266,7 @@ export const portfolioItems: PortfolioItem[] = [
     thumbnail: "/media/project-atlas.svg",
     mediaType: "image",
     summary:
-      "Wedding videography cu ritm lent, lumina moale si cadre curate, unde atmosfera ramane mai importanta decat spectacolul.",
+      "Wedding videography cu ritm lent, lumină moale și cadre curate, unde atmosfera rămâne mai importantă decât spectacolul.",
     tags: ["Ceremony", "Editorial", "Natural light"],
   },
   {
@@ -277,7 +277,7 @@ export const portfolioItems: PortfolioItem[] = [
     thumbnail: "/media/project-flux.svg",
     mediaType: "image",
     summary:
-      "Imagini construite din apropiere si liniste, fara regie ostentativa, pentru wedding videography care respira firesc.",
+      "Imagini construite din apropiere și liniște, fără regie ostentativă, pentru wedding videography care respiră firesc.",
     tags: ["Destination", "Quiet pacing", "Author look"],
   },
   {
@@ -288,7 +288,7 @@ export const portfolioItems: PortfolioItem[] = [
     thumbnail: "/media/project-summit.svg",
     mediaType: "image",
     summary:
-      "O selectie scurta cu accent pe lumina de seara, detalii reale si un montaj care lasa momentul sa existe.",
+      "O selecție scurtă cu accent pe lumina de seară, detalii reale și un montaj care lasă momentul să existe.",
     tags: ["Reception", "Documentary tone", "Warm edit"],
   },
   {
@@ -299,7 +299,7 @@ export const portfolioItems: PortfolioItem[] = [
     thumbnail: "/media/project-velocity.svg",
     mediaType: "image",
     summary:
-      "Cadre simple si precise pentru o poveste urbana, intima, care ramane moderna fara sa para rece.",
+      "Cadre simple și precise pentru o poveste urbană, intimă, care rămâne modernă fără să pară rece.",
     tags: ["Elopement", "Minimal", "Timeless cut"],
   },
 ];
@@ -308,15 +308,15 @@ export const services: ServiceItem[] = [
   {
     id: "wedding-films",
     title: "Wedding Films",
-    description: "Wedding videography de zi completa, cu accent pe coerenta, prezenta si memorie vizuala curata.",
+    description: "Wedding videography de zi completă, cu accent pe coerență, prezență și memorie vizuală curată.",
   },
 ];
 
 export const processSteps: ProcessStep[] = [
   {
     id: "connect",
-    title: "Conversatie",
-    description: "Intelegem energia evenimentului si tonul pe care il cautati.",
+    title: "Conversație",
+    description: "Înțelegem energia evenimentului și tonul pe care îl căutați.",
   },
 ];
 
@@ -327,7 +327,7 @@ export const testimonials: Testimonial[] = [
     role: "Cuplu",
     company: "Placeholder",
     quote:
-      "Wedding videography a surprins exact linistea si emotia zilei, fara sa para deloc fortata. Ne-am regasit complet in ritmul ei.",
+      "Wedding videography a surprins exact liniștea și emoția zilei, fără să pară deloc forțată. Ne-am regăsit complet în ritmul ei.",
     placeholder: true,
   },
   {
@@ -336,7 +336,7 @@ export const testimonials: Testimonial[] = [
     role: "Cuplu",
     company: "Placeholder",
     quote:
-      "Totul a fost discret si foarte firesc. Rezultatul final se simte elegant si viu, nu doar frumos montat.",
+      "Totul a fost discret și foarte firesc. Rezultatul final se simte elegant și viu, nu doar frumos montat.",
     placeholder: true,
   },
   {
@@ -345,7 +345,7 @@ export const testimonials: Testimonial[] = [
     role: "Private event",
     company: "Placeholder",
     quote:
-      "Ne-a placut faptul ca wedding videography lasa loc momentelor reale. Are emotie, dar ramane curata si rafinata.",
+      "Ne-a plăcut faptul că wedding videography lasă loc momentelor reale. Are emoție, dar rămâne curată și rafinată.",
     placeholder: true,
   },
 ];

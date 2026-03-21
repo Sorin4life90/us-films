@@ -15,9 +15,9 @@ export function Footer({ brandName, instagram }: FooterProps) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Ne rezervam dreptul de a selecta si utiliza imagini foto si video realizate in cadrul
-            evenimentelor, in scopuri de promovare si marketing, cu respectarea unei selectii atent
-            curate, aliniate cu identitatea si standardele noastre estetice.
+            Ne rezervăm dreptul de a selecta și utiliza imagini foto și video realizate în cadrul
+            evenimentelor, în scopuri de promovare și marketing, cu respectarea unei selecții atent
+            curate, aliniate cu identitatea și standardele noastre estetice.
           </a>
         </p>
       </div>
@@ -37,7 +37,7 @@ export function Footer({ brandName, instagram }: FooterProps) {
           <span>Instagram</span>
         </a>
         <a className="footer__link" href="#home">
-          Inapoi sus
+          Înapoi sus
         </a>
       </div>
     </footer>

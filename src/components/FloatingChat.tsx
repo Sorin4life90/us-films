@@ -102,7 +102,7 @@ export function FloatingChat({ phone }: FloatingChatProps) {
       }
     } catch {
       event.preventDefault();
-      window.prompt("Copiaza numarul pentru WhatsApp:", whatsappPhone);
+      window.prompt("Copiază numărul pentru WhatsApp:", whatsappPhone);
     }
   }
 
@@ -141,8 +141,8 @@ export function FloatingChat({ phone }: FloatingChatProps) {
             className="floating-audio-toggle"
             type="button"
             onClick={handleAudioToggle}
-            aria-label={isPlaying ? "Opreste muzica de fundal" : "Porneste muzica de fundal"}
-            title={isPlaying ? "Opreste muzica de fundal" : "Porneste muzica de fundal"}
+            aria-label={isPlaying ? "Oprește muzica de fundal" : "Pornește muzica de fundal"}
+            title={isPlaying ? "Oprește muzica de fundal" : "Pornește muzica de fundal"}
           >
             <span className="floating-chat__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" role="img" focusable="false">
@@ -195,7 +195,7 @@ export function FloatingChat({ phone }: FloatingChatProps) {
         </a>
       </div>
 
-      {copied ? <div className="floating-chat__toast">Numarul pentru WhatsApp a fost copiat.</div> : null}
+      {copied ? <div className="floating-chat__toast">Numărul pentru WhatsApp a fost copiat.</div> : null}
     </>
   );
 }

@@ -14,7 +14,7 @@ export function Navbar({
   activeSection,
 }: NavbarProps) {
   return (
-    <nav className="site-nav" aria-label="Navigatie principala">
+    <nav className="site-nav" aria-label="Navigație principală">
       <div className="site-nav__inner">
         <a className="site-nav__brand" href="#home" aria-label={`${brandName} home`}>
           <span className="site-nav__brand-mark">{brandTag}</span>

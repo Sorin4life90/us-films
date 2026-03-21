@@ -269,7 +269,7 @@ export function FeaturedProjects() {
                   onClick={() => setActiveVideo(null)}
                   aria-label="Close player"
                 >
-                  Inchide
+                  Închide
                 </button>
               </div>
             </div>

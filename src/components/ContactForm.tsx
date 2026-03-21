@@ -27,23 +27,23 @@ function validateForm(data: ContactFormData) {
   }
 
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email.trim())) {
-    errors.email = "Introdu o adresa de email valida.";
+    errors.email = "Introdu o adresă de email validă.";
   }
 
   if (data.company.trim().length < 2) {
-    errors.company = "Introdu cateva detalii de identificare.";
+    errors.company = "Introdu câteva detalii de identificare.";
   }
 
   if (!data.projectType) {
-    errors.projectType = "Selecteaza tipul de poveste.";
+    errors.projectType = "Selectează tipul de poveste.";
   }
 
   if (!data.timeline) {
-    errors.timeline = "Selecteaza cand are loc evenimentul.";
+    errors.timeline = "Selectează când are loc evenimentul.";
   }
 
   if (data.message.trim().length < 20) {
-    errors.message = "Mesajul trebuie sa aiba cel putin 20 de caractere.";
+    errors.message = "Mesajul trebuie să aibă cel puțin 20 de caractere.";
   }
 
   return errors;
@@ -98,20 +98,20 @@ export function ContactForm() {
 
     if (website.trim().length > 0) {
       setStatus("success");
-      setStatusMessage("Mesajul a fost inregistrat.");
+      setStatusMessage("Mesajul a fost înregistrat.");
       return;
     }
 
     if (Date.now() - startedAtRef.current < MIN_COMPLETION_TIME_MS) {
       setStatus("error");
-      setStatusMessage("Te rog incearca din nou peste cateva secunde.");
+      setStatusMessage("Te rog încearcă din nou peste câteva secunde.");
       return;
     }
 
     const lastSubmissionAt = getLastSubmissionAt();
     if (Date.now() - lastSubmissionAt < SUBMISSION_COOLDOWN_MS) {
       setStatus("error");
-      setStatusMessage("Te rog asteapta aproximativ un minut inainte de un nou mesaj.");
+      setStatusMessage("Te rog așteaptă aproximativ un minut înainte de un nou mesaj.");
       return;
     }
 
@@ -120,7 +120,7 @@ export function ContactForm() {
     if (Object.keys(nextErrors).length > 0) {
       setErrors(nextErrors);
       setStatus("error");
-      setStatusMessage("Te rog corecteaza campurile marcate si incearca din nou.");
+      setStatusMessage("Te rog corectează câmpurile marcate și încearcă din nou.");
       return;
     }
 
@@ -133,7 +133,7 @@ export function ContactForm() {
       setStatusMessage(
         result.mode === "emailjs"
           ? siteContent.contact.successMessage
-          : "Am deschis un email precompletat catre adresa afisata. Trimite-l din aplicatia ta de mail.",
+          : "Am deschis un email precompletat către adresa afișată. Trimite-l din aplicația ta de mail.",
       );
       setLastSubmissionAt(Date.now());
       setFormData(initialFormData);
@@ -145,7 +145,7 @@ export function ContactForm() {
       setStatusMessage(
         error instanceof Error
           ? error.message
-          : "A aparut o eroare. Incearca din nou.",
+          : "A apărut o eroare. Încearcă din nou.",
       );
     }
   }
@@ -191,7 +191,7 @@ export function ContactForm() {
                 </a>
               </div>
               <div className="contact-panel__item">
-                <span className="contact-panel__label">Locatie</span>
+                <span className="contact-panel__label">Locație</span>
                 <span className="contact-panel__value">{siteContent.contact.location}</span>
               </div>
             </div>
@@ -296,7 +296,7 @@ export function ContactForm() {
                   aria-describedby={errors.projectType ? "projectType-error" : undefined}
                   onChange={(event) => updateField("projectType", event.target.value)}
                 >
-                  <option value="">Alege o optiune</option>
+                  <option value="">Alege o opțiune</option>
                   {siteContent.contact.projectTypes.map((projectType) => (
                     <option key={projectType} value={projectType}>
                       {projectType}
@@ -312,7 +312,7 @@ export function ContactForm() {
 
               <div className="field">
                 <label className="field__label" htmlFor="timeline">
-                  Cand are loc
+                  Când are loc
                 </label>
                 <select
                   className="field__control"
@@ -349,7 +349,7 @@ export function ContactForm() {
                   aria-invalid={Boolean(errors.message)}
                   aria-describedby={errors.message ? "message-error" : undefined}
                   onChange={(event) => updateField("message", event.target.value)}
-                  placeholder="Spune-mi data, locatia si cateva detalii despre eveniment."
+                  placeholder="Spune-mi data, locația și câteva detalii despre eveniment."
                 />
                 {errors.message ? (
                   <p className="field__error" id="message-error">
