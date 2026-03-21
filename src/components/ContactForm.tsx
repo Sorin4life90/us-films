@@ -195,8 +195,6 @@ export function ContactForm() {
                 <span className="contact-panel__value">{siteContent.contact.location}</span>
               </div>
             </div>
-
-            <p className="contact-panel__notice">{siteContent.contact.notice}</p>
           </aside>
 
           <form className="contact-form" noValidate onSubmit={handleSubmit}>
