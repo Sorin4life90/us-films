@@ -1457,9 +1457,7 @@ textarea.field__control {
   }
 
   .site-nav__cta {
-    min-height: 42px;
-    padding: 0 16px;
-    font-size: 0.88rem;
+    display: none;
   }
 
   .section {
