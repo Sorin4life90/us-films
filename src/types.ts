@@ -39,6 +39,7 @@ export type Testimonial = {
 export type ContactFormData = {
   name: string;
   email: string;
+  phone: string;
   company: string;
   projectType: string;
   timeline: string;

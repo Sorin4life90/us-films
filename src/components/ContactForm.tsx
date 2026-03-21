@@ -6,6 +6,7 @@ import { Reveal } from "./Reveal";
 
 type FieldErrors = Partial<Record<keyof ContactFormData, string>>;
 type FormStatus = "idle" | "loading" | "success" | "error";
+
 const MIN_COMPLETION_TIME_MS = 2500;
 const SUBMISSION_COOLDOWN_MS = 60_000;
 const LAST_SUBMISSION_KEY = "us-films:last-contact-submit";
@@ -13,6 +14,7 @@ const LAST_SUBMISSION_KEY = "us-films:last-contact-submit";
 const initialFormData: ContactFormData = {
   name: "",
   email: "",
+  phone: "",
   company: "",
   projectType: "",
   timeline: "",
@@ -27,23 +29,27 @@ function validateForm(data: ContactFormData) {
   }
 
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email.trim())) {
-    errors.email = "Introdu o adresă de email validă.";
+    errors.email = "Introdu o adresa de email valida.";
+  }
+
+  if (!/^[+\d\s().-]{9,}$/.test(data.phone.trim())) {
+    errors.phone = "Introdu un numar de telefon valid.";
   }
 
   if (data.company.trim().length < 2) {
-    errors.company = "Introdu câteva detalii de identificare.";
+    errors.company = "Introdu cateva detalii de identificare.";
   }
 
   if (!data.projectType) {
-    errors.projectType = "Selectează tipul de poveste.";
+    errors.projectType = "Selecteaza tipul de eveniment.";
   }
 
   if (!data.timeline) {
-    errors.timeline = "Selectează când are loc evenimentul.";
+    errors.timeline = "Selecteaza cand are loc evenimentul.";
   }
 
   if (data.message.trim().length < 20) {
-    errors.message = "Mesajul trebuie să aibă cel puțin 20 de caractere.";
+    errors.message = "Mesajul trebuie sa aiba cel putin 20 de caractere.";
   }
 
   return errors;
@@ -73,10 +79,7 @@ export function ContactForm() {
     }
   }
 
-  function updateField<K extends keyof ContactFormData>(
-    field: K,
-    value: ContactFormData[K],
-  ) {
+  function updateField<K extends keyof ContactFormData>(field: K, value: ContactFormData[K]) {
     setFormData((current) => ({
       ...current,
       [field]: value,
@@ -98,20 +101,20 @@ export function ContactForm() {
 
     if (website.trim().length > 0) {
       setStatus("success");
-      setStatusMessage("Mesajul a fost înregistrat.");
+      setStatusMessage("Mesajul a fost inregistrat.");
       return;
     }
 
     if (Date.now() - startedAtRef.current < MIN_COMPLETION_TIME_MS) {
       setStatus("error");
-      setStatusMessage("Te rog încearcă din nou peste câteva secunde.");
+      setStatusMessage("Te rog incearca din nou peste cateva secunde.");
       return;
     }
 
     const lastSubmissionAt = getLastSubmissionAt();
     if (Date.now() - lastSubmissionAt < SUBMISSION_COOLDOWN_MS) {
       setStatus("error");
-      setStatusMessage("Te rog așteaptă aproximativ un minut înainte de un nou mesaj.");
+      setStatusMessage("Te rog asteapta aproximativ un minut inainte de un nou mesaj.");
       return;
     }
 
@@ -120,21 +123,17 @@ export function ContactForm() {
     if (Object.keys(nextErrors).length > 0) {
       setErrors(nextErrors);
       setStatus("error");
-      setStatusMessage("Te rog corectează câmpurile marcate și încearcă din nou.");
+      setStatusMessage("Te rog corecteaza campurile marcate si incearca din nou.");
       return;
     }
 
     setStatus("loading");
-    setStatusMessage("Trimitem mesajul...");
+    setStatusMessage("Deschidem WhatsApp...");
 
     try {
-      const result = await sendContactForm(formData, siteContent.contact.recipientEmail);
+      await sendContactForm(formData, siteContent.contact.phone);
       setStatus("success");
-      setStatusMessage(
-        result.mode === "emailjs"
-          ? siteContent.contact.successMessage
-          : "Am deschis un email precompletat către adresa afișată. Trimite-l din aplicația ta de mail.",
-      );
+      setStatusMessage("Am deschis WhatsApp cu mesajul precompletat.");
       setLastSubmissionAt(Date.now());
       setFormData(initialFormData);
       setErrors({});
@@ -143,9 +142,7 @@ export function ContactForm() {
     } catch (error) {
       setStatus("error");
       setStatusMessage(
-        error instanceof Error
-          ? error.message
-          : "A apărut o eroare. Încearcă din nou.",
+        error instanceof Error ? error.message : "A aparut o eroare. Incearca din nou.",
       );
     }
   }
@@ -182,7 +179,16 @@ export function ContactForm() {
                 >
                   <span className="social-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24" role="img" focusable="false">
-                      <rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" strokeWidth="1.6" />
+                      <rect
+                        x="3.5"
+                        y="3.5"
+                        width="17"
+                        height="17"
+                        rx="5"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.6"
+                      />
                       <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" strokeWidth="1.6" />
                       <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" />
                     </svg>
@@ -191,7 +197,7 @@ export function ContactForm() {
                 </a>
               </div>
               <div className="contact-panel__item">
-                <span className="contact-panel__label">Locație</span>
+                <span className="contact-panel__label">Locatie</span>
                 <span className="contact-panel__value">{siteContent.contact.location}</span>
               </div>
             </div>
@@ -260,6 +266,28 @@ export function ContactForm() {
               </div>
 
               <div className="field">
+                <label className="field__label" htmlFor="phone">
+                  Numar de telefon
+                </label>
+                <input
+                  className="field__control"
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  autoComplete="tel"
+                  value={formData.phone}
+                  aria-invalid={Boolean(errors.phone)}
+                  aria-describedby={errors.phone ? "phone-error" : undefined}
+                  onChange={(event) => updateField("phone", event.target.value)}
+                />
+                {errors.phone ? (
+                  <p className="field__error" id="phone-error">
+                    {errors.phone}
+                  </p>
+                ) : null}
+              </div>
+
+              <div className="field">
                 <label className="field__label" htmlFor="company">
                   Prenume
                 </label>
@@ -294,7 +322,7 @@ export function ContactForm() {
                   aria-describedby={errors.projectType ? "projectType-error" : undefined}
                   onChange={(event) => updateField("projectType", event.target.value)}
                 >
-                  <option value="">Alege o opțiune</option>
+                  <option value="">Alege o optiune</option>
                   {siteContent.contact.projectTypes.map((projectType) => (
                     <option key={projectType} value={projectType}>
                       {projectType}
@@ -310,7 +338,7 @@ export function ContactForm() {
 
               <div className="field">
                 <label className="field__label" htmlFor="timeline">
-                  Când are loc
+                  Cand are loc
                 </label>
                 <select
                   className="field__control"
@@ -347,7 +375,7 @@ export function ContactForm() {
                   aria-invalid={Boolean(errors.message)}
                   aria-describedby={errors.message ? "message-error" : undefined}
                   onChange={(event) => updateField("message", event.target.value)}
-                  placeholder="Spune-mi data, locația și câteva detalii despre eveniment."
+                  placeholder="Spune-mi data, locatia si cateva detalii despre eveniment."
                 />
                 {errors.message ? (
                   <p className="field__error" id="message-error">
@@ -358,12 +386,8 @@ export function ContactForm() {
             </div>
 
             <div className="contact-form__actions">
-              <button
-                className="button button--primary"
-                type="submit"
-                disabled={status === "loading"}
-              >
-                {status === "loading" ? "Trimitem..." : "Trimite mesajul"}
+              <button className="button button--primary" type="submit" disabled={status === "loading"}>
+                {status === "loading" ? "Deschidem WhatsApp..." : "Trimite pe WhatsApp"}
               </button>
               <a className="button button--secondary" href={`mailto:${siteContent.contact.email}`}>
                 Scrie direct pe email

@@ -1,63 +1,44 @@
 import type { ContactFormData } from "../types";
 
-const EMAIL_ENDPOINT = "https://api.emailjs.com/api/v1.0/email/send";
+type SendContactFormResult = {
+  mode: "whatsapp";
+};
 
-type SendContactFormResult =
-  | { mode: "emailjs" }
-  | { mode: "mailto" };
+function normalizePhone(phone: string) {
+  const digits = phone.replace(/[^\d]/g, "");
+  return digits.startsWith("0") ? `4${digits}` : digits;
+}
 
-function buildMailtoUrl(data: ContactFormData, recipientEmail: string) {
-  const subject = `Cerere Wedding Videography - ${data.name}`;
+function buildWhatsAppUrl(data: ContactFormData, recipientPhone: string) {
   const body = [
+    "Cerere noua US Films",
+    "",
     `Nume: ${data.name}`,
     `Email: ${data.email}`,
+    `Telefon: ${data.phone}`,
     `Prenume: ${data.company}`,
-    `Tip de poveste: ${data.projectType}`,
-    `Când are loc: ${data.timeline}`,
+    `Tip eveniment: ${data.projectType}`,
+    `Cand are loc: ${data.timeline}`,
     "",
-    "Câteva rânduri despre voi:",
+    "Mesaj:",
     data.message,
     "",
     `Trimis la: ${new Date().toLocaleString("ro-RO")}`,
   ].join("\n");
 
-  return `mailto:${recipientEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  return `https://wa.me/${normalizePhone(recipientPhone)}?text=${encodeURIComponent(body)}`;
 }
 
 export async function sendContactForm(
   data: ContactFormData,
-  recipientEmail: string,
+  recipientPhone: string,
 ): Promise<SendContactFormResult> {
-  const serviceId = import.meta.env.VITE_EMAIL_SERVICE_ID;
-  const templateId = import.meta.env.VITE_EMAIL_TEMPLATE_ID;
-  const publicKey = import.meta.env.VITE_EMAIL_PUBLIC_KEY;
+  const whatsappUrl = buildWhatsAppUrl(data, recipientPhone);
+  const popup = window.open(whatsappUrl, "_blank", "noopener,noreferrer");
 
-  if (!serviceId || !templateId || !publicKey) {
-    window.location.href = buildMailtoUrl(data, recipientEmail);
-    return { mode: "mailto" };
+  if (!popup) {
+    window.location.href = whatsappUrl;
   }
 
-  const response = await fetch(EMAIL_ENDPOINT, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      service_id: serviceId,
-      template_id: templateId,
-      user_id: publicKey,
-      template_params: {
-        ...data,
-        submitted_at: new Date().toLocaleString("ro-RO"),
-      },
-    }),
-  });
-
-  if (!response.ok) {
-    throw new Error(
-      "Cererea nu a putut fi trimisă. Verifică configurarea serviciului sau încearcă din nou.",
-    );
-  }
-
-  return { mode: "emailjs" };
+  return { mode: "whatsapp" };
 }
