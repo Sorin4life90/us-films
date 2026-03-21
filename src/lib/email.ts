@@ -10,19 +10,20 @@ function normalizePhone(phone: string) {
 }
 
 function buildWhatsAppUrl(data: ContactFormData, recipientPhone: string) {
+  const fallback = (value: string) => value.trim() || "(necompletat)";
   const timelineLabel = data.timeline.trim() || "Nu stiu exact";
   const body = [
     "Cerere noua US Films",
     "",
-    `Nume: ${data.name}`,
-    `Email: ${data.email}`,
-    `Telefon: ${data.phone}`,
-    `Prenume: ${data.company}`,
-    `Tip eveniment: ${data.projectType}`,
+    `Nume: ${fallback(data.name)}`,
+    `Email: ${fallback(data.email)}`,
+    `Telefon: ${fallback(data.phone)}`,
+    `Prenume: ${fallback(data.company)}`,
+    `Tip eveniment: ${fallback(data.projectType)}`,
     `Cand are loc: ${timelineLabel}`,
     "",
     "Mesaj:",
-    data.message,
+    fallback(data.message),
     "",
     `Trimis la: ${new Date().toLocaleString("ro-RO")}`,
   ].join("\n");

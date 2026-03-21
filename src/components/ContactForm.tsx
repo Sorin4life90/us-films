@@ -24,28 +24,12 @@ const initialFormData: ContactFormData = {
 function validateForm(data: ContactFormData) {
   const errors: FieldErrors = {};
 
-  if (data.name.trim().length < 2) {
-    errors.name = "Introdu un nume valid.";
+  if (data.email.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email.trim())) {
+    errors.email = "Introdu o adresa de email valida sau lasa campul gol.";
   }
 
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email.trim())) {
-    errors.email = "Introdu o adresa de email valida.";
-  }
-
-  if (!/^[+\d\s().-]{9,}$/.test(data.phone.trim())) {
-    errors.phone = "Introdu un numar de telefon valid.";
-  }
-
-  if (data.company.trim().length < 2) {
-    errors.company = "Introdu cateva detalii de identificare.";
-  }
-
-  if (!data.projectType) {
-    errors.projectType = "Selecteaza tipul de eveniment.";
-  }
-
-  if (data.message.trim().length < 20) {
-    errors.message = "Mesajul trebuie sa aiba cel putin 20 de caractere.";
+  if (data.phone.trim() && !/^[+\d\s().-]{9,}$/.test(data.phone.trim())) {
+    errors.phone = "Introdu un numar de telefon valid sau lasa campul gol.";
   }
 
   return errors;
