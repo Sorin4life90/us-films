@@ -10,6 +10,7 @@ function normalizePhone(phone: string) {
 }
 
 function buildWhatsAppUrl(data: ContactFormData, recipientPhone: string) {
+  const timelineLabel = data.timeline.trim() || "Nu stiu exact";
   const body = [
     "Cerere noua US Films",
     "",
@@ -18,7 +19,7 @@ function buildWhatsAppUrl(data: ContactFormData, recipientPhone: string) {
     `Telefon: ${data.phone}`,
     `Prenume: ${data.company}`,
     `Tip eveniment: ${data.projectType}`,
-    `Cand are loc: ${data.timeline}`,
+    `Cand are loc: ${timelineLabel}`,
     "",
     "Mesaj:",
     data.message,

@@ -1291,6 +1291,12 @@ textarea.field__control {
   color: #ffb3b3;
 }
 
+.field__hint {
+  margin: 0;
+  font-size: 0.82rem;
+  color: rgba(255, 236, 216, 0.66);
+}
+
 .contact-form__actions,
 .contact-form__status,
 .footer__actions {

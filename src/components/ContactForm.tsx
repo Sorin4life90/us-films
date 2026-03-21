@@ -44,10 +44,6 @@ function validateForm(data: ContactFormData) {
     errors.projectType = "Selecteaza tipul de eveniment.";
   }
 
-  if (!data.timeline) {
-    errors.timeline = "Selecteaza cand are loc evenimentul.";
-  }
-
   if (data.message.trim().length < 20) {
     errors.message = "Mesajul trebuie sa aiba cel putin 20 de caractere.";
   }
@@ -340,22 +336,19 @@ export function ContactForm() {
                 <label className="field__label" htmlFor="timeline">
                   Cand are loc
                 </label>
-                <select
+                <input
                   className="field__control"
                   id="timeline"
                   name="timeline"
+                  type="date"
                   value={formData.timeline}
                   aria-invalid={Boolean(errors.timeline)}
-                  aria-describedby={errors.timeline ? "timeline-error" : undefined}
+                  aria-describedby="timeline-help"
                   onChange={(event) => updateField("timeline", event.target.value)}
-                >
-                  <option value="">Spune-mi aproximativ</option>
-                  {siteContent.contact.timelines.map((timeline) => (
-                    <option key={timeline} value={timeline}>
-                      {timeline}
-                    </option>
-                  ))}
-                </select>
+                />
+                <p className="field__hint" id="timeline-help">
+                  Daca nu stii exact, lasa campul necompletat.
+                </p>
                 {errors.timeline ? (
                   <p className="field__error" id="timeline-error">
                     {errors.timeline}
