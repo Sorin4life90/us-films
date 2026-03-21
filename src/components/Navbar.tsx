@@ -24,11 +24,14 @@ export function Navbar({
         <div className="site-nav__links">
           {items.map((item) => {
             const itemSection = item.href.slice(1);
+            const isMobileOnly = item.href === "#contact";
 
             return (
               <a
                 key={item.href}
                 className={`site-nav__link ${
+                  isMobileOnly ? "site-nav__link--mobile-only" : ""
+                } ${
                   activeSection === itemSection ? "is-active" : ""
                 }`.trim()}
                 href={item.href}

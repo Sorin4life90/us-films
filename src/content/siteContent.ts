@@ -14,6 +14,7 @@ export const siteContent: SiteContent = {
     { label: "Wedding Films", href: "#films" },
     { label: "Wedding Photography", href: "#photography" },
     { label: "Despre", href: "#about" },
+    { label: "Contact", href: "#contact" },
   ],
   hero: {
     eyebrow: "Nu e doar un film. Este povestea voastră. Trăiți-o din nou, de fiecare dată.",

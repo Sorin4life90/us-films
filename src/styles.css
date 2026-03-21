@@ -100,6 +100,10 @@
     transform 180ms ease;
 }
 
+.site-nav__link--mobile-only {
+  display: none;
+}
+
 .site-nav__link::after {
   content: "";
   position: absolute;
@@ -1454,6 +1458,10 @@ textarea.field__control {
     left: 10px;
     right: 10px;
     bottom: 4px;
+  }
+
+  .site-nav__link--mobile-only {
+    display: inline-flex;
   }
 
   .site-nav__cta {
