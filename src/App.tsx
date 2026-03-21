@@ -34,25 +34,33 @@ function App() {
       return undefined;
     }
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visibleSections = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+    const updateActiveSection = () => {
+      const activationOffset = 160;
+      let nextActiveSection = sections[0]?.id ?? "home";
 
-        if (visibleSections.length > 0) {
-          setActiveSection(visibleSections[0].target.id);
+      for (const section of sections) {
+        const { top } = section.getBoundingClientRect();
+
+        if (top <= activationOffset) {
+          nextActiveSection = section.id;
+        } else {
+          break;
         }
-      },
-      {
-        rootMargin: "-25% 0px -45% 0px",
-        threshold: [0.2, 0.35, 0.55],
-      },
-    );
+      }
 
-    sections.forEach((section) => observer.observe(section));
+      setActiveSection((currentSection) =>
+        currentSection === nextActiveSection ? currentSection : nextActiveSection,
+      );
+    };
 
-    return () => observer.disconnect();
+    updateActiveSection();
+    window.addEventListener("scroll", updateActiveSection, { passive: true });
+    window.addEventListener("resize", updateActiveSection);
+
+    return () => {
+      window.removeEventListener("scroll", updateActiveSection);
+      window.removeEventListener("resize", updateActiveSection);
+    };
   }, []);
 
   return (
