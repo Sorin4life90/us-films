@@ -264,6 +264,18 @@ export const portfolioItems: PortfolioItem[] = [
     tags: ["YouTube", "Sound", "Fullscreen"],
   },
   {
+    id: "us-films-youtube-six",
+    title: "US Films VI",
+    category: "Wedding Films",
+    year: "2025",
+    thumbnail: "/media/project-summit.svg",
+    mediaType: "video",
+    embedSrc: "https://www.youtube.com/embed/jXuCZ2c-ubI",
+    summary:
+      "Al șaselea wedding film din selecție, disponibil direct în playerul interactiv din pagină.",
+    tags: ["YouTube", "Sound", "Fullscreen"],
+  },
+  {
     id: "manor-story",
     title: "Manor story",
     category: "Wedding Films",
