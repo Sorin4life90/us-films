@@ -270,7 +270,7 @@ export const portfolioItems: PortfolioItem[] = [
     year: "2025",
     thumbnail: "/media/project-summit.svg",
     mediaType: "video",
-    embedSrc: "https://www.youtube.com/embed/fC0BrXElZPI",
+    embedSrc: "https://www.youtube.com/embed/C9QVGOYLoR8",
     summary:
       "Al șaselea wedding film din selecție, disponibil direct în playerul interactiv din pagină.",
     tags: ["YouTube", "Sound", "Fullscreen"],
