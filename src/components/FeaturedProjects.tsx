@@ -84,6 +84,87 @@ function getExternalUrl(rawUrl: string) {
   return `https://www.youtube.com/watch?v=${parsed.id}`;
 }
 
+function getYouTubeThumbnailUrl(rawUrl: string) {
+  const parsed = getVideoId(rawUrl);
+
+  if (parsed?.platform !== "youtube" || !parsed.id) {
+    return "";
+  }
+
+  return `https://i.ytimg.com/vi/${parsed.id}/hqdefault.jpg`;
+}
+
+function FilmPreviewMedia({ project }: { project: VideoItem }) {
+  const mediaRef = useRef<HTMLDivElement | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isInView, setIsInView] = useState(false);
+  const platform = getVideoId(project.embedSrc)?.platform;
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 560px)");
+    const syncMatch = () => setIsMobile(mediaQuery.matches);
+
+    syncMatch();
+    mediaQuery.addEventListener("change", syncMatch);
+
+    return () => mediaQuery.removeEventListener("change", syncMatch);
+  }, []);
+
+  useEffect(() => {
+    if (!isMobile || platform !== "youtube") {
+      setIsInView(true);
+      return undefined;
+    }
+
+    const node = mediaRef.current;
+
+    if (!node) {
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView(entry.isIntersecting);
+      },
+      {
+        rootMargin: "180px 0px",
+        threshold: 0.2,
+      },
+    );
+
+    observer.observe(node);
+
+    return () => observer.disconnect();
+  }, [isMobile, platform]);
+
+  const shouldRenderIframe = platform !== "youtube" || !isMobile || isInView;
+  const thumbnailUrl = getYouTubeThumbnailUrl(project.embedSrc);
+
+  return (
+    <div ref={mediaRef} className="film-preview__media">
+      {shouldRenderIframe ? (
+        <iframe
+          className="film-preview__iframe"
+          src={getPreviewEmbedSrc(project.embedSrc)}
+          title={`${project.title} preview`}
+          frameBorder="0"
+          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+          referrerPolicy="strict-origin-when-cross-origin"
+          loading="lazy"
+          tabIndex={-1}
+        />
+      ) : (
+        <img
+          className="film-preview__poster"
+          src={thumbnailUrl}
+          alt={`${project.title} poster`}
+          loading="lazy"
+        />
+      )}
+    </div>
+  );
+}
+
 export function FeaturedProjects() {
   const videoItems = portfolioItems.filter(
     (project): project is VideoItem => project.mediaType === "video" && Boolean(project.embedSrc),
@@ -221,18 +302,7 @@ export function FeaturedProjects() {
                   </span>
                 </div>
 
-                <div className="film-preview__media">
-                  <iframe
-                    className="film-preview__iframe"
-                    src={getPreviewEmbedSrc(project.embedSrc)}
-                    title={`${project.title} preview`}
-                    frameBorder="0"
-                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    loading="lazy"
-                    tabIndex={-1}
-                  />
-                </div>
+                <FilmPreviewMedia project={project} />
               </button>
             </Reveal>
           );
