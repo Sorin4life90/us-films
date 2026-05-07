@@ -6,6 +6,30 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+@font-face {
+  font-family: "Silk Serif ExtraLight";
+  src: url("./assets/fonts/Silk-Serif-ExtraLight.woff") format("woff");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Silk Serif Light";
+  src: url("./assets/fonts/Silk-Serif-Light.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Silk Serif Regular";
+  src: url("./assets/fonts/Silk-Serif-Regular.woff") format("woff");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
 *,
 *::before,
 *::after {
@@ -20,7 +44,7 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background: #f7f2ea;
+  background: #ffffff;
 }
 
 body::before,
@@ -34,17 +58,16 @@ body::after {
 
 body::before {
   background:
-    radial-gradient(circle at 16% 10%, rgba(204, 168, 122, 0.22), transparent 18%),
-    radial-gradient(circle at 84% 22%, rgba(244, 221, 192, 0.3), transparent 20%),
-    radial-gradient(circle at 50% 100%, rgba(228, 214, 193, 0.24), transparent 18%),
-    linear-gradient(180deg, #fbf8f2 0%, #f5efe5 42%, #f8f3eb 100%);
+    radial-gradient(circle at 16% 10%, rgba(0, 0, 0, 0.03), transparent 18%),
+    radial-gradient(circle at 84% 22%, rgba(0, 0, 0, 0.025), transparent 20%),
+    linear-gradient(180deg, #ffffff 0%, #fcfcfc 42%, #ffffff 100%);
 }
 
 body::after {
-  opacity: 0.08;
+  opacity: 0.04;
   background-image:
-    linear-gradient(rgba(80, 64, 48, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(80, 64, 48, 0.06) 1px, transparent 1px);
+    linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
   background-size: 140px 140px;
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.28), transparent 82%);
 }

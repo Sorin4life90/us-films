@@ -1999,3 +1999,285 @@ select.field__control option {
     animation: none;
   }
 }
+
+.page-shell {
+  color: #161616;
+  font-family: "Poppins", "Segoe UI", sans-serif;
+}
+
+.page-shell::before,
+.page-shell::after,
+.hero__orb,
+.hero__grid {
+  opacity: 0.08;
+}
+
+.site-nav {
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.04);
+}
+
+.site-nav__brand-mark,
+.eyebrow,
+.film-preview__meta,
+.film-modal__eyebrow,
+.contact-panel__eyebrow,
+.contact-panel__label {
+  color: rgba(0, 0, 0, 0.48);
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  letter-spacing: 0.16em;
+}
+
+.site-nav__brand-name,
+.hero__title,
+.section-heading__title,
+.contact-panel__title,
+.film-modal__title,
+.footer__brand,
+.hero-card__title,
+.film-preview__label {
+  color: #121212;
+}
+
+.site-nav__brand-name,
+.hero__title,
+.section-heading__title,
+.contact-panel__title,
+.film-modal__title,
+.footer__brand,
+.hero-card__title,
+.film-preview__label,
+.about-signature__body,
+.hero__description,
+.section-heading__body,
+.contact-panel__body,
+.field__label,
+.field__control,
+.contact-panel__value,
+.field__hint,
+.footer__note {
+  font-family: "Silk Serif Light", Georgia, serif;
+}
+
+.hero__title,
+.section-heading__title,
+.contact-panel__title,
+.film-modal__title,
+.footer__brand,
+.hero-card__title,
+.film-preview__label {
+  font-family: "Silk Serif ExtraLight", Georgia, serif;
+}
+
+.site-nav__link,
+.button,
+.floating-chat__label,
+.footer__link {
+  font-family: "Poppins", "Segoe UI", sans-serif;
+}
+
+.button--primary,
+.button--secondary,
+.field__control::placeholder {
+  font-family: "Silk Serif Regular", Georgia, serif;
+}
+
+.site-nav__link {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.site-nav__link::after {
+  background: #111111;
+}
+
+.site-nav__link:hover,
+.site-nav__link:focus-visible,
+.site-nav__link.is-active {
+  color: #111111;
+}
+
+.button--primary {
+  background: #111111;
+  color: #ffffff;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.14);
+}
+
+.button--primary:hover,
+.button--primary:focus-visible {
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.18);
+}
+
+.button--secondary {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.12);
+  color: #111111;
+}
+
+.button--secondary:hover,
+.button--secondary:focus-visible {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.24);
+}
+
+.hero {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 1));
+}
+
+.hero__title,
+.section-heading__title {
+  font-weight: 300;
+}
+
+.hero__title-accent,
+.section-heading__title-accent {
+  background: none;
+  color: #121212;
+}
+
+.hero__description,
+.section-heading__body,
+.about-signature__body,
+.contact-panel__body,
+.contact-panel__value,
+.field__hint,
+.footer__note {
+  color: rgba(0, 0, 0, 0.72);
+}
+
+.hero__signal,
+.hero-card__meta span,
+.showreel__detail,
+.footer__link {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.92);
+  color: rgba(0, 0, 0, 0.76);
+  box-shadow: none;
+}
+
+.hero__signal:hover,
+.hero-card__meta span:hover,
+.showreel__detail:hover,
+.footer__link:hover {
+  border-color: rgba(0, 0, 0, 0.16);
+  background: #ffffff;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.05);
+}
+
+.hero-card,
+.showreel__frame-shell,
+.film-story,
+.about-signature__card,
+.testimonial-card,
+.contact-panel,
+.contact-form,
+.about-gallery__frame {
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  background: #ffffff;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.04);
+}
+
+.hero-card::before,
+.showreel__frame-shell::before,
+.film-story::before,
+.about-signature__card::before,
+.testimonial-card::before,
+.contact-panel::before,
+.contact-form::before {
+  display: none;
+}
+
+.hero-card__caption,
+.about-gallery__caption {
+  background: rgba(255, 255, 255, 0.9);
+  color: #111111;
+}
+
+.films-strip {
+  scrollbar-color: rgba(0, 0, 0, 0.22) rgba(0, 0, 0, 0.06);
+}
+
+.films-strip::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.films-strip::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.22);
+}
+
+.film-preview__media,
+.film-modal__player {
+  background: #f7f7f7;
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.08);
+}
+
+.film-preview__button:hover .film-preview__media,
+.film-preview__button:focus-visible .film-preview__media {
+  box-shadow: 0 22px 42px rgba(0, 0, 0, 0.1);
+}
+
+.film-modal {
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.film-modal__close {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: #ffffff;
+  color: #111111;
+}
+
+.contact-panel__notice {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.field__control {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: #ffffff;
+  color: #111111;
+}
+
+.select.field__control,
+select.field__control {
+  background: #ffffff;
+  color: #111111;
+}
+
+select.field__control option {
+  background: #ffffff;
+  color: #111111;
+}
+
+.field__control:focus-visible {
+  border-color: rgba(0, 0, 0, 0.32);
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.06);
+}
+
+.footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  color: rgba(0, 0, 0, 0.64);
+}
+
+.floating-chat,
+.floating-audio-toggle {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.08);
+  color: #111111;
+}
+
+.floating-chat:hover,
+.floating-chat:focus-visible,
+.floating-audio-toggle:hover,
+.floating-audio-toggle:focus-visible {
+  border-color: rgba(0, 0, 0, 0.16);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.12);
+}
+
+.floating-chat__toast {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: #ffffff;
+  color: #111111;
+}
