@@ -26,10 +26,24 @@ export function Footer({ brandName, instagram }: FooterProps) {
         <a className="footer__link" href="#films">
           Vezi wedding films
         </a>
-        <a className="footer__link footer__link--social" href={instagram} target="_blank" rel="noopener noreferrer">
+        <a
+          className="footer__link footer__link--social"
+          href={instagram}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <span className="social-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" role="img" focusable="false">
-              <rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" strokeWidth="1.6" />
+              <rect
+                x="3.5"
+                y="3.5"
+                width="17"
+                height="17"
+                rx="5"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.6"
+              />
               <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" strokeWidth="1.6" />
               <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" />
             </svg>

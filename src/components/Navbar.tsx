@@ -7,12 +7,7 @@ type NavbarProps = {
   activeSection: string;
 };
 
-export function Navbar({
-  brandName,
-  brandTag,
-  items,
-  activeSection,
-}: NavbarProps) {
+export function Navbar({ brandName, brandTag, items, activeSection }: NavbarProps) {
   return (
     <nav className="site-nav" aria-label="Navigație principală">
       <div className="site-nav__inner">

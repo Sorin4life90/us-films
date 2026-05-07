@@ -36,6 +36,7 @@ function validateForm(data: ContactFormData) {
 }
 
 export function ContactForm() {
+  const mailtoAddress = siteContent.contact.recipientEmail || siteContent.contact.email;
   const [formData, setFormData] = useState<ContactFormData>(initialFormData);
   const [errors, setErrors] = useState<FieldErrors>({});
   const [status, setStatus] = useState<FormStatus>("idle");
@@ -139,7 +140,7 @@ export function ContactForm() {
             <div className="contact-panel__list">
               <div className="contact-panel__item">
                 <span className="contact-panel__label">Email</span>
-                <a className="contact-panel__value" href={`mailto:${siteContent.contact.email}`}>
+                <a className="contact-panel__value" href={`mailto:${mailtoAddress}`}>
                   {siteContent.contact.email}
                 </a>
               </div>
@@ -366,7 +367,7 @@ export function ContactForm() {
               <button className="button button--primary" type="submit" disabled={status === "loading"}>
                 {status === "loading" ? "Deschidem WhatsApp..." : "Trimite pe WhatsApp"}
               </button>
-              <a className="button button--secondary" href={`mailto:${siteContent.contact.email}`}>
+              <a className="button button--secondary" href={`mailto:${mailtoAddress}`}>
                 Scrie direct pe email
               </a>
             </div>

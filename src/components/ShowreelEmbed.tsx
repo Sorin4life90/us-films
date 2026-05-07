@@ -1,4 +1,5 @@
 import { siteContent } from "../content/siteContent";
+import { withBase } from "../lib/assetPath";
 
 function getBackgroundEmbedSrc(rawUrl: string) {
   try {
@@ -36,12 +37,15 @@ function getBackgroundEmbedSrc(rawUrl: string) {
 
 export function ShowreelEmbed() {
   const embedSrc = getBackgroundEmbedSrc(siteContent.featuredFilm.embedSrc);
+  const mobilePosterStyle = {
+    backgroundImage: `linear-gradient(180deg, rgba(6, 7, 11, 0.16) 0%, rgba(6, 7, 11, 0.56) 100%), url("${withBase("/media/fotolense/adda-giani.jpg")}")`,
+  };
 
   return (
     <section className="section section--showreel" id="home" aria-label="Wedding videography hero">
       <div className="showreel showreel--hero-video">
         <div className="showreel__background">
-          <div className="showreel__mobile-poster" aria-hidden="true" />
+          <div className="showreel__mobile-poster" aria-hidden="true" style={mobilePosterStyle} />
           <iframe
             className="showreel__background-iframe"
             src={embedSrc}

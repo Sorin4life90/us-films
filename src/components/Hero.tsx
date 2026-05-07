@@ -1,4 +1,5 @@
 import type { SiteContent } from "../types";
+import { withBase } from "../lib/assetPath";
 import { Reveal } from "./Reveal";
 
 type HeroProps = {
@@ -45,7 +46,7 @@ export function Hero({ hero }: HeroProps) {
               <figure className="hero-card__media">
                 <img
                   className="hero-card__image"
-                  src="/media/fotolense/mihaela-razvan.jpg"
+                  src={withBase("/media/fotolense/mihaela-razvan.jpg")}
                   alt="Cadru wedding photography din portofoliul Fotolense"
                 />
                 <figcaption className="hero-card__caption">Wedding Photography / FotoLense</figcaption>

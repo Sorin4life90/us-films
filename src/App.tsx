@@ -7,12 +7,11 @@ import { FloatingChat } from "./components/FloatingChat";
 import { Hero } from "./components/Hero";
 import { Navbar } from "./components/Navbar";
 import { ShowreelEmbed } from "./components/ShowreelEmbed";
-import { WeddingPhotography } from "./components/WeddingPhotography";
 import { siteContent } from "./content/siteContent";
 import "./styles.css";
 
 function App() {
-  const sectionIds = ["home", "films", "photography", "about", "contact"];
+  const sectionIds = ["home", "films", "about", "contact"];
   const [activeSection, setActiveSection] = useState("home");
 
   useLayoutEffect(() => {
@@ -77,7 +76,6 @@ function App() {
 
       <main className="main-content">
         <FeaturedProjects />
-        <WeddingPhotography />
         <AboutSignature />
         <ContactForm />
       </main>

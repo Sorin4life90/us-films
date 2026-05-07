@@ -337,7 +337,7 @@ export function FeaturedProjects() {
                   className="film-modal__close"
                   type="button"
                   onClick={() => setActiveVideo(null)}
-                  aria-label="Close player"
+                  aria-label="Închide playerul"
                 >
                   Închide
                 </button>

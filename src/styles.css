@@ -535,9 +535,9 @@
   display: none;
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(180deg, rgba(6, 7, 11, 0.16) 0%, rgba(6, 7, 11, 0.56) 100%),
-    url("/media/fotolense/adda-giani.jpg") center 34% / cover no-repeat;
+  background-position: center 34%;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .showreel__background-iframe {
@@ -1373,6 +1373,322 @@ textarea.field__control {
   to {
     transform: translate3d(18px, -22px, 0) scale(1.08);
   }
+}
+
+.page-shell {
+  color: #3f3429;
+}
+
+.page-shell::before {
+  top: -10rem;
+  right: -10rem;
+  background: radial-gradient(circle, rgba(217, 187, 150, 0.42), rgba(217, 187, 150, 0));
+}
+
+.page-shell::after {
+  bottom: 10rem;
+  left: -10rem;
+  background: radial-gradient(circle, rgba(242, 223, 196, 0.52), rgba(242, 223, 196, 0));
+}
+
+.site-nav {
+  background: rgba(251, 247, 240, 0.86);
+  border-bottom: 1px solid rgba(86, 70, 53, 0.08);
+  box-shadow: 0 10px 30px rgba(114, 91, 68, 0.06);
+}
+
+.site-nav__brand-mark,
+.eyebrow,
+.film-story__topline,
+.testimonial-card__meta,
+.contact-panel__eyebrow,
+.contact-panel__label,
+.about-signature__label,
+.hero-card__label,
+.film-preview__meta,
+.film-modal__eyebrow {
+  color: #ad8460;
+}
+
+.site-nav__brand-name,
+.hero__title,
+.section-heading__title,
+.hero-card__title,
+.film-story__title,
+.contact-panel__title,
+.film-modal__title,
+.footer__brand {
+  color: #2f241b;
+}
+
+.site-nav__link {
+  color: rgba(63, 52, 41, 0.72);
+}
+
+.site-nav__link::after {
+  background: linear-gradient(90deg, #c8a07c, #e8c9a6);
+}
+
+.site-nav__link:hover,
+.site-nav__link:focus-visible,
+.site-nav__link.is-active {
+  color: #231a13;
+}
+
+.button--primary {
+  background: linear-gradient(135deg, #dbc2a5 0%, #f0deca 100%);
+  color: #2f241b;
+  box-shadow: 0 14px 30px rgba(182, 148, 112, 0.18);
+}
+
+.button--primary:hover,
+.button--primary:focus-visible {
+  box-shadow: 0 18px 38px rgba(182, 148, 112, 0.28);
+}
+
+.button--secondary {
+  background: rgba(255, 255, 255, 0.72);
+  border-color: rgba(112, 88, 64, 0.12);
+  color: #403327;
+}
+
+.button--secondary:hover,
+.button--secondary:focus-visible {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(171, 132, 96, 0.32);
+}
+
+.hero {
+  background: linear-gradient(180deg, rgba(251, 247, 240, 0.72), rgba(247, 242, 234, 0.92));
+}
+
+.hero__orb--one {
+  background: radial-gradient(circle, rgba(224, 194, 159, 0.34), transparent 70%);
+}
+
+.hero__orb--two {
+  background: radial-gradient(circle, rgba(242, 226, 202, 0.48), transparent 70%);
+}
+
+.hero__orb--three {
+  background: radial-gradient(circle, rgba(231, 218, 199, 0.34), transparent 72%);
+}
+
+.hero__grid {
+  background-image:
+    linear-gradient(rgba(86, 70, 53, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(86, 70, 53, 0.05) 1px, transparent 1px);
+  opacity: 0.16;
+}
+
+.eyebrow::before {
+  background: linear-gradient(90deg, rgba(189, 153, 116, 0.9), rgba(189, 153, 116, 0.22));
+}
+
+.hero__title-accent,
+.section-heading__title-accent {
+  background: linear-gradient(135deg, #b18661, #d9ba93);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero__description,
+.section-heading__body,
+.film-story__summary,
+.about-signature__body,
+.about-signature__note,
+.about-signature__quote-text,
+.testimonial-card__quote,
+.contact-panel__body,
+.footer__note,
+.hero-card__body,
+.contact-panel__value,
+.contact-form__status,
+.field__label,
+.field__hint {
+  color: rgba(63, 52, 41, 0.8);
+}
+
+.hero__signal,
+.hero-card__meta span,
+.showreel__detail,
+.footer__link {
+  border: 1px solid rgba(112, 88, 64, 0.1);
+  background: rgba(255, 255, 255, 0.72);
+  color: rgba(63, 52, 41, 0.84);
+}
+
+.hero__signal:hover,
+.hero-card__meta span:hover,
+.showreel__detail:hover,
+.footer__link:hover {
+  border-color: rgba(171, 132, 96, 0.22);
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 12px 26px rgba(114, 91, 68, 0.1);
+}
+
+.hero-card,
+.showreel__frame-shell,
+.film-story,
+.about-signature__card,
+.testimonial-card,
+.contact-panel,
+.contact-form {
+  border: 1px solid rgba(112, 88, 64, 0.1);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(252, 248, 242, 0.92)),
+    rgba(255, 255, 255, 0.9);
+  box-shadow:
+    0 24px 56px rgba(114, 91, 68, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65);
+}
+
+.hero-card::before,
+.showreel__frame-shell::before,
+.film-story::before,
+.about-signature__card::before,
+.testimonial-card::before,
+.contact-panel::before,
+.contact-form::before {
+  background: linear-gradient(135deg, rgba(206, 170, 132, 0.28), rgba(240, 224, 202, 0.18), rgba(255, 255, 255, 0.75));
+}
+
+.hero-card__caption,
+.about-gallery__caption {
+  background: rgba(255, 251, 245, 0.84);
+  color: #3b2f24;
+}
+
+.showreel__scroll-hint,
+.showreel__floating-pill {
+  border-color: rgba(255, 255, 255, 0.34);
+  background: rgba(252, 248, 243, 0.6);
+  color: #f8f3ec;
+}
+
+.films-strip {
+  scrollbar-color: rgba(177, 134, 97, 0.48) rgba(185, 160, 132, 0.12);
+}
+
+.films-strip::-webkit-scrollbar-track {
+  background: rgba(185, 160, 132, 0.12);
+}
+
+.films-strip::-webkit-scrollbar-thumb {
+  background: rgba(177, 134, 97, 0.48);
+}
+
+.film-preview__label {
+  color: rgba(47, 36, 27, 0.92);
+}
+
+.film-preview__button:hover .film-preview__label,
+.film-preview__button:focus-visible .film-preview__label {
+  color: #1f1711;
+}
+
+.film-preview__media {
+  background: #f7f0e8;
+  box-shadow: 0 20px 42px rgba(114, 91, 68, 0.14);
+}
+
+.film-preview__media::after {
+  background:
+    linear-gradient(180deg, rgba(255, 252, 247, 0.04) 0%, rgba(60, 46, 34, 0.14) 100%),
+    radial-gradient(circle at 16% 20%, rgba(212, 184, 151, 0.18), transparent 24%);
+}
+
+.film-modal {
+  background: rgba(245, 239, 230, 0.72);
+}
+
+.film-modal__player {
+  background: #f3ece4;
+  box-shadow: 0 32px 80px rgba(96, 75, 54, 0.18);
+}
+
+.film-modal__close {
+  border: 1px solid rgba(112, 88, 64, 0.12);
+  background: rgba(255, 255, 255, 0.82);
+  color: #34291f;
+}
+
+.film-modal__close:hover,
+.film-modal__close:focus-visible {
+  background: rgba(255, 255, 255, 0.96);
+  border-color: rgba(171, 132, 96, 0.32);
+}
+
+.about-gallery__frame {
+  border: 1px solid rgba(112, 88, 64, 0.1);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 18px 38px rgba(114, 91, 68, 0.1);
+}
+
+.contact-panel__notice {
+  background: linear-gradient(135deg, rgba(219, 194, 165, 0.28), rgba(240, 224, 202, 0.34));
+  border: 1px solid rgba(112, 88, 64, 0.1);
+  color: rgba(63, 52, 41, 0.82);
+}
+
+.field__control {
+  border: 1px solid rgba(112, 88, 64, 0.12);
+  background: rgba(255, 255, 255, 0.82);
+  color: #2f241b;
+}
+
+select.field__control {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(252, 248, 242, 0.92)),
+    rgba(255, 255, 255, 0.82);
+  color: #2f241b;
+}
+
+select.field__control option {
+  background: #fffaf4;
+  color: #2f241b;
+}
+
+.field__control:focus-visible {
+  border-color: rgba(177, 134, 97, 0.48);
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 0 0 4px rgba(217, 187, 150, 0.18);
+}
+
+.footer {
+  padding-top: 36px;
+  border-top: 1px solid rgba(112, 88, 64, 0.08);
+  color: rgba(63, 52, 41, 0.72);
+}
+
+.floating-chat,
+.floating-audio-toggle {
+  border: 1px solid rgba(112, 88, 64, 0.1);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(250, 244, 236, 0.92)),
+    rgba(255, 255, 255, 0.92);
+  box-shadow:
+    0 18px 40px rgba(114, 91, 68, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  color: #33281f;
+}
+
+.floating-chat:hover,
+.floating-chat:focus-visible,
+.floating-audio-toggle:hover,
+.floating-audio-toggle:focus-visible {
+  border-color: rgba(171, 132, 96, 0.28);
+  box-shadow:
+    0 22px 48px rgba(114, 91, 68, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
+}
+
+.floating-chat__toast {
+  border: 1px solid rgba(112, 88, 64, 0.1);
+  background: rgba(255, 252, 247, 0.96);
+  box-shadow: 0 18px 40px rgba(114, 91, 68, 0.16);
+  color: #3b2f24;
 }
 
 @media (max-width: 1080px) {

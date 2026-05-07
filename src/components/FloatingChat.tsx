@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, type MouseEvent } from "react";
+import { withBase } from "../lib/assetPath";
 
 type FloatingChatProps = {
   phone: string;
@@ -133,7 +134,13 @@ export function FloatingChat({ phone }: FloatingChatProps) {
 
   return (
     <>
-      <audio ref={audioRef} src="/media/background-music.mp3" preload="auto" loop aria-hidden="true" />
+      <audio
+        ref={audioRef}
+        src={withBase("/media/background-music.mp3")}
+        preload="auto"
+        loop
+        aria-hidden="true"
+      />
 
       <div className="floating-chat-wrap">
         {showDesktopAudio ? (
