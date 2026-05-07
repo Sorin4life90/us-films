@@ -1,4 +1,5 @@
 import { siteContent } from "../content/siteContent";
+import { withBase } from "../lib/assetPath";
 import { Reveal } from "./Reveal";
 
 export function AboutSignature() {
@@ -12,7 +13,7 @@ export function AboutSignature() {
     <section className="section section--about" id="about">
       <Reveal>
         <div className="about-signature-wrap">
-          <div className={`about-signature${hasCardContent ? "" : " about-signature--single"}`}>
+          <div className={`about-signature${hasCardContent ? "" : " about-signature--single"} about-signature--with-photo`}>
             <div className="about-signature__content">
               <span className="eyebrow">{siteContent.aboutSignature.eyebrow}</span>
               <h2 className="section-heading__title">
@@ -44,6 +45,15 @@ export function AboutSignature() {
                 ) : null}
               </div>
             ) : null}
+
+            <aside className="about-signature__portrait-card" aria-label="Portret Sorin">
+              <img
+                className="about-signature__portrait-image"
+                src={withBase("/media/about-sorin.png")}
+                alt="Sorin ținând camera la un eveniment"
+                loading="lazy"
+              />
+            </aside>
           </div>
         </div>
       </Reveal>
