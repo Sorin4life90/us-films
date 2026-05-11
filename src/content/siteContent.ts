@@ -284,10 +284,10 @@ export const portfolioItems: PortfolioItem[] = [
     year: "2025",
     thumbnail: media("/media/project-summit.svg"),
     mediaType: "video",
-    embedSrc: "https://www.youtube.com/embed/C9QVGOYLoR8",
+    embedSrc: "https://video.usfilms.ro/clipuri/Masterclass.mp4",
     summary:
-      "Al șaptelea wedding film din selecție, disponibil direct în playerul interactiv din pagină.",
-    tags: ["YouTube", "Sound", "Fullscreen"],
+      "Al șaptelea wedding film din selecție, livrat direct din biblioteca video US Films.",
+    tags: ["Direct", "MP4", "Wedding"],
   },
   {
     id: "manor-story",
