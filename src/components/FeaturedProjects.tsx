@@ -12,6 +12,14 @@ function getVideoId(rawUrl: string) {
   try {
     const url = new URL(rawUrl);
     const host = url.hostname.replace("www.", "");
+    const pathname = url.pathname.toLowerCase();
+
+    if (/\.(mp4|webm|ogg|mov)(?:$|\?)/i.test(pathname)) {
+      return {
+        platform: "file" as const,
+        url: rawUrl,
+      };
+    }
 
     if (host.includes("vimeo.com")) {
       const segments = url.pathname.split("/").filter(Boolean);
@@ -45,8 +53,12 @@ function getVideoId(rawUrl: string) {
 function getPreviewEmbedSrc(rawUrl: string) {
   const parsed = getVideoId(rawUrl);
 
-  if (!parsed?.id) {
+  if (!parsed) {
     return rawUrl;
+  }
+
+  if (parsed.platform === "file") {
+    return parsed.url;
   }
 
   if (parsed.platform === "vimeo") {
@@ -59,8 +71,12 @@ function getPreviewEmbedSrc(rawUrl: string) {
 function getPlayerEmbedSrc(rawUrl: string) {
   const parsed = getVideoId(rawUrl);
 
-  if (!parsed?.id) {
+  if (!parsed) {
     return rawUrl;
+  }
+
+  if (parsed.platform === "file") {
+    return parsed.url;
   }
 
   if (parsed.platform === "vimeo") {
@@ -73,8 +89,12 @@ function getPlayerEmbedSrc(rawUrl: string) {
 function getExternalUrl(rawUrl: string) {
   const parsed = getVideoId(rawUrl);
 
-  if (!parsed?.id) {
+  if (!parsed) {
     return rawUrl;
+  }
+
+  if (parsed.platform === "file") {
+    return parsed.url;
   }
 
   if (parsed.platform === "vimeo") {
@@ -98,7 +118,8 @@ function FilmPreviewMedia({ project }: { project: VideoItem }) {
   const mediaRef = useRef<HTMLDivElement | null>(null);
   const [isMobile, setIsMobile] = useState(false);
   const [isInView, setIsInView] = useState(false);
-  const platform = getVideoId(project.embedSrc)?.platform;
+  const source = getVideoId(project.embedSrc);
+  const platform = source?.platform;
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 560px)");
@@ -142,7 +163,17 @@ function FilmPreviewMedia({ project }: { project: VideoItem }) {
 
   return (
     <div ref={mediaRef} className="film-preview__media">
-      {shouldRenderIframe ? (
+      {platform === "file" ? (
+        <video
+          className="film-preview__video"
+          src={getPreviewEmbedSrc(project.embedSrc)}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+        />
+      ) : shouldRenderIframe ? (
         <iframe
           className="film-preview__iframe"
           src={getPreviewEmbedSrc(project.embedSrc)}
@@ -282,6 +313,8 @@ export function FeaturedProjects() {
       >
         {videoItems.map((project, index) => {
           const platform = getVideoId(project.embedSrc)?.platform;
+          const platformLabel =
+            platform === "vimeo" ? "Vimeo" : platform === "youtube" ? "YouTube" : "Direct";
 
           return (
             <Reveal
@@ -298,7 +331,7 @@ export function FeaturedProjects() {
                 <div className="film-preview__label-wrap">
                   <span className="film-preview__label">{project.title}</span>
                   <span className="film-preview__meta">
-                    {platform === "vimeo" ? "Vimeo" : "YouTube"} / {project.year}
+                    {platformLabel} / {project.year}
                   </span>
                 </div>
 
@@ -345,16 +378,28 @@ export function FeaturedProjects() {
             </div>
 
             <div className="film-modal__player">
-              <iframe
-                key={activeVideo.id}
-                className="film-modal__iframe"
-                src={getPlayerEmbedSrc(activeVideo.embedSrc)}
-                title={activeVideo.title}
-                frameBorder="0"
-                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-              />
+              {getVideoId(activeVideo.embedSrc)?.platform === "file" ? (
+                <video
+                  key={activeVideo.id}
+                  className="film-modal__video"
+                  src={getPlayerEmbedSrc(activeVideo.embedSrc)}
+                  controls
+                  autoPlay
+                  playsInline
+                  preload="metadata"
+                />
+              ) : (
+                <iframe
+                  key={activeVideo.id}
+                  className="film-modal__iframe"
+                  src={getPlayerEmbedSrc(activeVideo.embedSrc)}
+                  title={activeVideo.title}
+                  frameBorder="0"
+                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                />
+              )}
             </div>
           </div>
         </div>
