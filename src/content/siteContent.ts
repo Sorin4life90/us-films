@@ -178,7 +178,7 @@ export const siteContent: SiteContent = {
     recipientEmail: "sorin4life90@yahoo.com",
     phone: "0773805239",
     instagram: "https://www.instagram.com/us_films_wedding_videography/",
-    location: "România / destinații disponibile la cerere",
+    location: "București, România / destinații disponibile la cerere",
     notice:
       "Ne rezervăm dreptul de a selecta și utiliza imagini foto și video realizate în cadrul evenimentelor, în scopuri de promovare și marketing, cu respectarea unei selecții atent curate, aliniate cu identitatea și standardele noastre estetice.",
     projectTypes: [
